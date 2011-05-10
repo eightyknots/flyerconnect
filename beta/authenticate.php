@@ -3,7 +3,7 @@
 define(APP_VERSION, "2.0.0");
 define(APP_BUILD,   21105090001);
 define(PTR,         "../private/");
-define(IS_BETA,     true);
+define(IS_BETA,     false);
 define(PLAINTEXT,   false);
 
 require_once("../private/class.common.php");
@@ -12,7 +12,7 @@ require_once("../private/class.display.php");
 
 // Initialize system
 $_a = new Common();
-$_u = new UX('lite');
+$_u = new UX('main');
 
 // Initialize FB variables
 $_f = array();
@@ -37,8 +37,10 @@ if ($_a->checkFbLogin()) {
  * 
  */
     // Prepare "header.lite.html"
+    $_u->pushClear();
     $_u->pushJavascript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js", true);
     $_u->pushJavascript("fb");
+    $_u->pushJavaScript("fontloader");
     $_u->pushCss("screen");
 
     // Set up page variables
@@ -64,9 +66,17 @@ if ($_a->checkFbLogin()) {
 
 
 switch($_GET['f']) {
+    case "account_login":
+        $snippet = array(
+            "url"   => $_a->genFbOAuthUrl(),
+        );
+        echo $_u->showHtmlSnippet("account_login", $snippet);
+        break;
     case "perms_deny":
-        echo "<p>You must give the app these permissions to continue. <a href=\"".
-            $_a->genFbOAuthUrl()."\">Click here</a> to do so.</p>";
+        $snippet = array(
+            "url"   => $_a->genFbOAuthUrl(),
+        );
+        echo $_u->showHtmlSnippet("permissions", $snippet);
         break;
     default:
         echo "<p>An error occured.</p>";

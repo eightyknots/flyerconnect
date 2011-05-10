@@ -171,14 +171,14 @@ class Common {
         if (!$userid) {
             if (!$this->fb_me['id']) return false;
             // Create myself
-            $checkSql = $this->assertSql("SELECT `UserID` from `UserData` where `UserID` = ".
+            $checkSql = $this->assertSql("SELECT * from `UserData` where `UserID` = ".
                     $this->fb_me['id']);
             if ($checkSql->num_rows !== 1) {
                 // User is not in database
                 $makeSql = $this->assertSql("INSERT into `UserData` VALUES (".$this->fb_me['id'].", '".
-                        $this->fb_me['first_name']."', '".$this->fb_me['last_name']."', 1, 1, 1)",
+                        $this->fb_me['first_name']."', '".$this->fb_me['last_name']."', 1, 0, 0)",
                         "Couldn't make user.");
-                $checkSql = $this->assertSql("SELECT `UserID` from `UserData` where `UserID` = ".
+                $checkSql = $this->assertSql("SELECT * from `UserData` where `UserID` = ".
                     $this->fb_me['id']);
             }
             
