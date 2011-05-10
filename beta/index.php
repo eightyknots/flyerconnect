@@ -139,6 +139,10 @@ if ($_user['UserIsBetaTester'] !== "1"): ?>
     </div>
 </div>
 
+<script type="text/javascript">
+setTitle('FC2 Message');
+</script>
+
 <?php else: ?>
 
 

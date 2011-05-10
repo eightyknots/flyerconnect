@@ -5,4 +5,6 @@
 // FBJS version: 110509001
 
 
-
+function setTitle(toWhat) {
+    document.title=toWhat+' | FlyerConnect';
+}

@@ -85,30 +85,30 @@ div#content-box div#content-bar {
     text-align: left;
     background-color: #ffdfee;
     color: #160719;
-    -webkit-box-shadow: 0 1px 10px rgba(211, 143, 216, 1);
-    -moz-box-shadow: 0 1px 10px rgba(211, 143, 216, 1);
-    box-shadow: 0 1px 10px rgba(211, 143, 216, 1);
+    -webkit-box-shadow: 0 0 10px 5px rgba(211, 143, 216, 1);
+    -moz-box-shadow: 0 0 10px 5px rgba(211, 143, 216, 1);
+    box-shadow: 0 0 10px 5px rgba(211, 143, 216, 1);
     -webkit-border-radius: 0px 4px 4px 0px;
     -moz-border-radius: 0px 4px 4px 0px;
     border-radius: 0px 4px 4px 0px; /* IE requires all 4 */
 }
 
 div#content-box div#content-nav {
-    z-index: 2;
+    z-index: 7;
     display: inline-block;
     float: left;
     width: 225px;
     text-align: left;
     min-height:300px;
-    background-color: #5f008f;
-    color: #ffdfee;
-    -webkit-box-shadow: 0 1px 10px rgba(255, 206, 246, .5);
-    -moz-box-shadow: 0 1px 10px rgba(255, 206, 246, .5);
-    box-shadow: 0 1px 10px rgba(255, 206, 246, .5);
+    background-color: #e7ffd7;
+    color: #3e4a10;
+    -webkit-box-shadow: 0 0 10px 5px rrgba(255, 206, 246, .5);
+    -moz-box-shadow: 0 0 10px 5px rrgba(255, 206, 246, .5);
+    box-shadow: 0 0 10px 5px rgba(255, 206, 246, .5);
     -webkit-border-radius: 4px 0px 0px 4px;
     -moz-border-radius: 4px 0px 0px 4px;
     border-radius: 4px 0px 0px 4px; /* IE requires all 4 */
-    border-right: 1px solid #ff68f7;
+    border-right: 1px solid #232e00;
 }
 
 
