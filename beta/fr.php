@@ -10,7 +10,7 @@ if(!$_SERVER['QUERY_STRING']) { // || $_SERVER['HTTP_REFERER'] {
     exit();
 }
 
-$res = explode(',', $_SERVER['QUERY_STRING']);
+$res = explode(',', urldecode($_SERVER['QUERY_STRING']));
 $type = $res[0];
 $file = $res[1];
 
@@ -19,27 +19,32 @@ $mime = null;
 
 switch($type) {
     case "css":
-        if(file_exists("../resources/".urlencode($res[1]).".css")) {
+        if(file_exists("../resources/".$res[1].".css")) {
             $mime = "text/css";
             // TODO: [FR] Update expires header to last edit date
             $expires = "Expires: Fri, 30 Oct 1998 14:19:41 GMT";
-            $output = file_get_contents("../resources/".urlencode($res[1]).".css");
+            $output = file_get_contents("../resources/".$res[1].".css");
+        }
+        break;
+     case "html":
+        if(file_exists("../resources/".urlencode($res[1]).".html")) {
+            $mime = "text/html";
+            $output = file_get_contents("../resources/".$res[1].".html");
         }
         break;
      case "png":
         if(file_exists("../resources/".urlencode($res[1]).".png")) {
             $mime = "image/png";
-            // TODO: [FR] Update expires header to last edit date
             $expires = "Expires: Sat, 1 Jan 2000 00:00:01 GMT";
-            $output = file_get_contents("../resources/".urlencode($res[1]).".png");
+            $output = file_get_contents("../resources/".$res[1].".png");
         }
         break;
     case "js":
-        if(file_exists("../resources/".urlencode($res[1]).".js")) {
+        if(file_exists("../resources/".$res[1].".js")) {
             $mime = "text/javascript; charset=UTF-8";
             // TODO: [FR] Update expires header to last edit date
             $expires = "Expires: Fri, 30 Oct 1998 14:19:41 GMT";
-            $output = file_get_contents("../resources/".urlencode($res[1]).".js");
+            $output = file_get_contents("../resources/".$res[1].".js");
         }
         break;
 }
