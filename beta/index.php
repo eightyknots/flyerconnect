@@ -4,7 +4,7 @@ define(APP_VERSION, "2.0.0");
 define(APP_BUILD,   21105090001);
 define(PTR,         "../private/");
 define(IS_BETA,     true);
-define(PLAINTEXT,   true);
+define(PLAINTEXT,   false);
 
 require_once("../private/class.common.php");
 require_once("../private/class.display.php");
@@ -38,7 +38,7 @@ $_u = new UX('main');
                 exit();
             }
             // Authenticated, refresh!
-            header("Location: ./");
+            header("Location: ./#/home");
             exit();
         } else {
             // App isn't even added.
@@ -97,7 +97,19 @@ $_u = new UX('main');
  */
     echo $_u->showHtmlSnippet("header", $_p);
     echo $_u->showHtmlSnippet("facebookjs");
-    
+?>
+
+
+<!-- MainPage -->
+
+
+
+
+
+<!-- /MainPage -->
+
+
+<?php
     
 
 exit();

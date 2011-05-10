@@ -26,6 +26,14 @@ switch($type) {
             $output = file_get_contents("../resources/".urlencode($res[1]).".css");
         }
         break;
+     case "png":
+        if(file_exists("../resources/".urlencode($res[1]).".png")) {
+            $mime = "image/png";
+            // TODO: [FR] Update expires header to last edit date
+            $expires = "Expires: Sat, 1 Jan 2000 00:00:01 GMT";
+            $output = file_get_contents("../resources/".urlencode($res[1]).".png");
+        }
+        break;
     case "js":
         if(file_exists("../resources/".urlencode($res[1]).".js")) {
             $mime = "text/javascript; charset=UTF-8";
