@@ -14,15 +14,12 @@ class Common {
     
     // Define hostname, username, password and database
     private $mysql_host = "localhost";
-    private $mysql_user = "";
-    private $mysql_pass = "";
-    private $mysql_data = "";
     
     // Facebook variables
-    public  $fb_perms = array("publish_stream","offline_access");
+    public  $fb_perms = array("publish_stream");
+    
     public  $fb_appid = "";
     private $fb_secret = "";
-    
     // Class references
     public $data;
     public $fb;
