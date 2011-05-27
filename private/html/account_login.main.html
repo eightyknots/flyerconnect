@@ -1,16 +1,52 @@
 <!-- Snippet::Login -->
 
 <div id="content-box">
-    <div id="content-notice">
+    
+    
+    <div id="main-page" onmouseover="$(this).stop().animate({height:'50px',lineHeight:'50px;'});" onmouseout="$(this).stop().animate({height:'45px',lineHeight:'45px;'});" onclick="window.location='/'" class="ml">
+        <h3 class="title">Flyer<span class="lpt">Connect</span></h3>
+    </div>
+    
+    
+    <!--<div id="content-welcome">
+        <div class="padder">
+            <h1 class="green">Hello!</h1>
+        </div>
+    </div>
+    -->
+    
+    <div id="content-notice" style="margin-top:70px;">
         <div class="padder">
             <h1>Welcome to FlyerConnect!</h1>
             <p><strong>FlyerConnect</strong> is a web tool to make the sometimes mundane activity of flying much
             more social. Connect with Facebook friends, discover coworkers on your flights, and share your activity
             on Twitter.</p>
             <p>Before you can continue, we must authenticate your account with Facebook.</p>
-            <p style="text-align:center;font-size:1.2em;padding:8px;"><a href="__%url%__"><strong>Connect Now!</strong></a></p>
+            <p style="text-align:center;font-size:1.2em;padding:8px;"><a href="javascript:;" onclick="fbJsAuth();return false;"><strong>Connect Now!</strong></a></p>
+            <p>When you connect, we'll pop up a little window that looks just like the image below. You just need to hit &quot;Allow&quot; - don't worry, we will never abuse your Facebook rights. Once you grant us access, you'll begin setting up your account with FlyerConnect.</p>
+            <p style="text-align:center;"><img src="/fr.php?png,fbscreen" alt="[Sample screenshot]" /></p>
+            
         </div>
     </div>
+    
+    
 </div>
+
+<script type="text/javascript">
+function fbJsAuth(oAuthUrl) {
+    FB.login(function(response) {
+      if (response.session) {
+        if (response.perms) {
+          // user granted us the proper permissions, login
+          window.location='/';
+        } else {
+          // user is logged in, but did not grant any permissions
+          window.location='/authenticate.php?f=perms_deny';
+        }
+      }
+    }, {perms:'publish_stream'});
+}
+</script>
+
 
 <!-- /Login -->

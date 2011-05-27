@@ -1,7 +1,7 @@
 <?php
 
-define(APP_VERSION, "2.0.0");
-define(APP_BUILD,   21105090001);
+define(APP_VERSION, "2.0.1");
+define(APP_BUILD,   21105270002);
 define(PTR,         "../private/");
 define(IS_BETA,     true);
 define(PLAINTEXT,   false);
@@ -105,12 +105,6 @@ $_u = new UX('main');
  */
     echo $_u->showHtmlSnippet("header", $_p);
     echo $_u->showHtmlSnippet("facebookjs");
-?>
-
-
-<!-- MainPage -->
-
-<?php
 
 /*
  * 
@@ -119,47 +113,16 @@ $_u = new UX('main');
  * 
  * 
  */
-if ($_user['UserIsBetaTester'] !== "1"): ?>
+//if ($_user['UserIsBetaTester'] !== "1"): 
 
-<div id="content-box">
-    <div id="content-notice">
-        <div class="padder">
-            <h1>Coming Soon</h1>
-            <p>FlyerConnect 2 is being completely redesigned from the ground up. This includes our migrating old
-                workflows, making pages faster, incorporating a whole new style and much more! Please visit us soon.</p>
-            <p>PS: We promise to make the migration step really, <strong>really</strong> easy.</p>
-            <p>To follow our open-source coding, check out our
-                <strong>
-                    <a href="https://github.com/yectep/flyerconnect"
-                       onclick="window.open($(this).attr('href'));return false;">GitHub repository</a>
-                </strong>. Alternatively feel free to <strong>
-                    <a href="http://www.flyerconnect.com">return to the current version.</a></strong>
-            </p>
-        </div>
-    </div>
-</div>
+    // Display the main page
+    echo $_u->showHtmlSnippet("home");
 
-<script type="text/javascript">
-setTitle('FC2 Message');
-</script>
-
-<?php else: ?>
+//else:
 
 
-<div id="content-box">
-    <div id="content-nav">
-        <div class="padder">
-            <p>Test</p>
-        </div>
-    </div>
-    <div id="content-bar">
-        <div class="padder">
-            <p>Test</p>
-        </div>
-    </div>
-</div>
-
-<?php endif; ?>
+//endif;
+?>
 
 <!-- /MainPage -->
 

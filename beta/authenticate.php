@@ -1,7 +1,7 @@
 <?php
 
-define(APP_VERSION, "2.0.0");
-define(APP_BUILD,   21105090001);
+define(APP_VERSION, "2.0.1");
+define(APP_BUILD,   21105270002);
 define(PTR,         "../private/");
 define(IS_BETA,     false);
 define(PLAINTEXT,   false);

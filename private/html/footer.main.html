@@ -2,6 +2,29 @@
 <!-- Snippet::Footer -->
 
 <!--
+    TODO: [UX] Style hover section for main footer/copyright snippet
+-->
+
+<div style="clear:both;height:20px;"></div>
+
+<div id="footer" style="position:fixed;bottom:0px;left:0px;margin:0px;width:100%;opacity:0.001;background-image:url('/fr.php?png,ftrpt');background-repeat:repeat-x;height:60px;vertical-align:center;">
+    <p style="text-align:center;line-height:60px;color:#df7ae9;"><a href="javascript:;" class="lite">About FlyerConnect</a> &bull; <a href="javascript:;" class="lite">Privacy</a> &bull; <a href="javascript:;" class="lite">Terms and Conditions</a></p>
+</div>
+
+<script type="text/javascript">
+   $(document).ready(function() { 
+    $('#footer').hover(
+        function(){
+            $(this).stop().fadeTo('slow',1);
+        },
+        function(){
+            $(this).stop().fadeTo('fast',0.001);
+        });
+
+    });
+</script>
+
+<!--
     TODO: [HTML] Close page styling properly
 -->
 
